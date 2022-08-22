@@ -12,13 +12,28 @@ function Login(){
     const [email, setEmail] = useState();
     const [senha, setSenha] =useState();
     const [msgTipo, setMsgTipo] = useState();
+    const [carregando, setCarregando] = useState();
 
-    function logar(){
+    function logar(){       
+        setCarregando(1);
+
+        if(!email || !senha){
+            setCarregando(0);
+            setMsgTipo('erro');
+            return;
+        }
+        
         firebase.auth().signInWithEmailAndPassword(email, senha)
             .then(resultado => {
+
+                setCarregando(0);
+
                 setMsgTipo('sucesso');
             })
             .catch(erro => {
+
+                setCarregando(0);
+
                 setMsgTipo('erro');
             });
     }
@@ -36,8 +51,10 @@ function Login(){
                 
                 <input type="password" id="inputPassword" className="form-control my-2" placeholder="Senha" onChange={(e) => setSenha(e.target.value)}/>
                 
-
-                <button onClick={logar} className="btn btn-lg btn-block btn-login" type="button">Entrar</button>
+                {
+                    carregando ? <div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div>
+                    : <button onClick={logar} className="btn btn-lg btn-block btn-login" type="button">Entrar</button>
+                }
 
                 <div className="msg-login text-white text-center my-5">
 
