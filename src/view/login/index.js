@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import './style.css';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+
+import { useSelector, useDispatch } from 'react-redux';
 
 import firebase from '../../config/firebase';
 import 'firebase/auth';
@@ -15,6 +17,8 @@ function Login(){
     const [msgTipo, setMsgTipo] = useState();
     const [carregando, setCarregando] = useState();
 
+    const dispatch = useDispatch();
+
     function logar(){       
         setCarregando(1);
 
@@ -28,19 +32,24 @@ function Login(){
             .then(resultado => {
 
                 setCarregando(0);
-
                 setMsgTipo('sucesso');
+                setTimeout(() => {
+                    dispatch({type: 'LOG_IN', usuarioEmail: email})
+                }, 1500);               
             })
             .catch(erro => {
-
                 setCarregando(0);
-
                 setMsgTipo('erro');
             });
     }
 
     return(
         <div className="login-content d-flex align-items-center">
+
+            {
+                useSelector(state => state.usuarioLogado) > 0 ? <Navigate to='/' /> : null
+            }
+
             <form className="form-signin mx-auto">
                 <div className="text-center mb-4">
                     <img className="mb-4" src={logo} alt="" width="72" height="72" />

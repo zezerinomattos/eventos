@@ -8,12 +8,13 @@ header nav.navbar a img.navebar-img-Logo{
     width: 30%;
 }
 
-header nav.navbar div ul li.nav-item a{
+header nav.navbar div ul li.nav-item a, .btn-sair{
     color: #FFFF;
     font-size: 120%;
     transition: .5s ease-in;
+    cursor: pointer;
 }
 
-header nav.navbar div ul li.nav-item a:hover{
+header nav.navbar div ul li.nav-item a:hover, .btn-sair:hover{
     color: #cf2626;
 }
