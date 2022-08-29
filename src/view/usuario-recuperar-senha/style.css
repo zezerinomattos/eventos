@@ -1,0 +1,11 @@
+form button.btn-enviar{
+    background-color: #91B2F2;
+    color: #FFFF;
+    margin-top: 10px;
+    transition: .5s ease-in;
+}
+
+form button.btn-enviar:hover{
+    background-color: #0E1F40;
+    color: #FFF;
+}

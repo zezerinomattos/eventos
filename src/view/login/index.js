@@ -74,7 +74,7 @@ function Login(){
                 </div>
 
                 <div className="opcoes-login mt-5 text-center">  
-                    <a href="#" className="mx-2">Recuperar Senha</a> 
+                    <Link to='/usuariorecuperarsenha' className="mx-2">Recuperar Senha</Link> 
                     <span className="text-white">|</span>
                     <Link to='/novousuario' className="mx-2">Quero Cadastrar</Link>
                 </div>
