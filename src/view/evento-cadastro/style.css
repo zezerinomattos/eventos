@@ -1,0 +1,15 @@
+div.cadastro-titulo h3{
+    text-align: center;
+}
+
+form button.btn-cadastro{
+    background-color: #91B2F2;
+    color: #FFFF;
+    transition: 1s ease-out;
+}
+
+form button.btn-cadastro:hover{
+    background-color: #0E1F40;
+    color: #FFFF;
+
+}

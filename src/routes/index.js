@@ -8,6 +8,7 @@ import Login from '../view/login';
 import NovoUsuario from '../view/usuario-novo';
 import Home from '../view/Home';
 import UsuarioRecuperarSenha from "../view/usuario-recuperar-senha";
+import EventosCadastro from "../view/evento-cadastro";
 
 export default function Rotas(){
     return(
@@ -18,6 +19,7 @@ export default function Rotas(){
                     <Route path="/novousuario" element={<NovoUsuario />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/usuariorecuperarsenha" element={<UsuarioRecuperarSenha />} />
+                    <Route path="/eventoscadastro" element={<EventosCadastro />} />
                 </Routes>
             </BrowserRouter>
         </Provider>
