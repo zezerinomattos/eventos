@@ -1,0 +1,23 @@
+img.img-cartao{
+    max-height: 200px;
+    min-width: 100%;
+}
+
+div.cardy-body p.card-text{
+    max-height: 100px;
+    overflow: hidden;
+}
+
+div.cardy-body div.rodape-card{
+    color: #91B2F2;
+    height: 35px;
+}
+
+div.cardy-body div.rodape-card a.btn-detalhes{
+    background-color: #91B2F2;
+    color: #FFFF;
+}
+
+div.cardy-body div.rodape-card a.btn-detalhes:hover{
+    background-color: #cf2626;
+}

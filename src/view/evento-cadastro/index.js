@@ -18,7 +18,7 @@ function EventosCadastro(){
     const [detalhes, setDetalhes] = useState();
     const [data, setData] =useState();
     const [hora, setHora] = useState();
-    const [fotoNova, setFotoNova] = useState();
+    const [foto, setFotoNova] = useState();
     const usuarioEmail = useSelector(state => state.usuarioEmail);
     const [carregando, setCarregando] = useState();
 
@@ -30,7 +30,7 @@ function EventosCadastro(){
         setMsgTipo(null);
         setCarregando(1);
 
-        storage.ref(`imagens/${fotoNova.name}`).put(fotoNova).then(() => {
+        storage.ref(`imagens/${foto.name}`).put(foto).then(() => {
             db.collection('eventos').add({
                 titulo: titulo,
                 tipo: tipo,
@@ -39,7 +39,7 @@ function EventosCadastro(){
                 hora: hora,
                 usuario: usuarioEmail, 
                 visualizacoes: 0,
-                foto: fotoNova.name,
+                foto: foto.name,
                 publico: 1,
                 criacao: new Date()
             })
