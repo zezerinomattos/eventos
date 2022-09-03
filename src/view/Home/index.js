@@ -31,13 +31,12 @@ function Home(){
     return(
         <>
             <Navbar />
-            <h1>{ useSelector(state => state.usuarioEmail)}</h1>
-            <h1>LOgado: { useSelector(state => state.usuarioLogado)}</h1>
-
-            <div className='row'>
-                {eventos.map(item => <EventoCard key={item.id} img={item.foto} titulo={item.titulo} detalhes={item.detalhes} visualizacoes={item.visualizacoes} />)}
-                              
-            </div>
+            <main>
+                <div className='row'>
+                    {eventos.map(item => <EventoCard key={item.id} id={item.id} img={item.foto} titulo={item.titulo} detalhes={item.detalhes} visualizacoes={item.visualizacoes} />)}
+                                
+                </div>
+            </main>
 
         </>
         

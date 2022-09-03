@@ -6,7 +6,7 @@ import './style.css';
 import firebase from '../../config/firebase';
 
 
-function EventoCard({key, img, titulo, detalhes, visualizacoes}){
+function EventoCard({id, img, titulo, detalhes, visualizacoes}){
 
     const [urlImagem, setUrlImagem] = useState();
 
@@ -25,11 +25,11 @@ function EventoCard({key, img, titulo, detalhes, visualizacoes}){
 
                 <div className='row rodape-card d-flex align-items-center'>
                     <div className='col-6'>
-                        <Link to='/' className='btn btn-sm btn-detalhes'>+detalhes</Link>
+                        <Link to={'/eventodetalhes/' + id } className='btn btn-sm btn-detalhes'>+detalhes</Link>
                     </div>
 
                     <div className='col-6 text-right'>
-                        <i class="fas fa-eye"></i><span>{visualizacoes}</span>
+                        <i class="fas fa-eye"></i> <span>{visualizacoes}</span>
                     </div>
                 </div>
             </div>
