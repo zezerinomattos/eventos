@@ -16,6 +16,7 @@ export default function Rotas(){
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/eventos/:parametro" element={<Home />} />
                     <Route path="/novousuario" element={<NovoUsuario />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/usuariorecuperarsenha" element={<UsuarioRecuperarSenha />} />

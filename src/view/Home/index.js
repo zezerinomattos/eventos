@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './style.css';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useSelector} from 'react-redux';
 
 
@@ -15,20 +15,39 @@ function Home(){
     const [eventos, setEventos] = useState([]);
     const [pesquisa, setPesquisa] = useState('');
     let listaEventos = [];
+
+    const {parametro} = useParams();
+    const usuarioEmail = useSelector(state => state.usuarioEmail);
     
 
     useEffect(() => {
-        firebase.firestore().collection('eventos').get().then(async (resultado) => {            
-            await resultado.docs.forEach(doc => {
-                if(doc.data().titulo.indexOf(pesquisa) >= 0){
-                    listaEventos.push({
-                        id: doc.id,
-                        ...doc.data()
-                    })
-                }
+
+        if(parametro){
+            firebase.firestore().collection('eventos').where('usuario', '==', usuarioEmail).get().then(async (resultado) => {            
+                await resultado.docs.forEach(doc => {
+                    if(doc.data().titulo.indexOf(pesquisa) >= 0){
+                        listaEventos.push({
+                            id: doc.id,
+                            ...doc.data()
+                        })
+                    }
+                })
+                setEventos(listaEventos);
             })
-            setEventos(listaEventos);
+        }else{
+
+            firebase.firestore().collection('eventos').get().then(async (resultado) => {            
+                await resultado.docs.forEach(doc => {
+                    if(doc.data().titulo.indexOf(pesquisa) >= 0){
+                        listaEventos.push({
+                            id: doc.id,
+                            ...doc.data()
+                        })
+                    }
+                })
+                setEventos(listaEventos);
             })
+        }
     });
 
 
@@ -36,7 +55,8 @@ function Home(){
         <>
             <Navbar />
 
-            <div class="p-5">
+            <div class="text-center p-5">
+                <h2 className="my-2 mb-5">Eventos Publicados</h2>
                 <input onChange={(e) => setPesquisa(e.target.value)} className="form-control me-2 text-center" type="text" placeholder="Pesquisar evento pelo título..." />
             </div>
 
