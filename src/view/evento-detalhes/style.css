@@ -4,6 +4,10 @@ img.img-banner{
     max-height: 350px;
 }
 
+h3.titulo, .visualizacoes{
+    color: #91B2F2;
+}
+
 div.box-info{
     background-color: #91B2F2;
     color: #FFFFFF;
