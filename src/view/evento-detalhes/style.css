@@ -1,0 +1,25 @@
+img.img-banner{
+    width: 100%;
+    min-height: 300px;
+    max-height: 350px;
+}
+
+div.box-info{
+    background-color: #91B2F2;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a.btn-editar i{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: #cf2626;
+    transition: .3s ease-in;
+}
+
+a.btn-editar i:hover{
+    color: #91B2F2;
+}

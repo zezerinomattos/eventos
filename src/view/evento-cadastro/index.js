@@ -103,6 +103,8 @@ function EventosCadastro(){
                     <label>Upload da Imagem</label>
                     <input onChange={(e) => setFotoNova(e.target.files[0]) } type="file" className="form-control"/>
                 </div>
+
+                {foto ? <img src={URL.createObjectURL(foto)} alt="Imagem" width="150" height="100" /> : ""}
                 
                 <div className='row'>
                     {
