@@ -85,7 +85,7 @@ function EventoDetalhes(props){
 
                             {
                                 usuarioLogado === evento.usuario ?
-                                    <Link to='' className='btn-editar' ><i className='fas fa-pen-square fa-3x'></i></Link>
+                                    <Link to={`/editarevento/${id}`} className='btn-editar' ><i className='fas fa-pen-square fa-3x'></i></Link>
                                 :   '' 
                             }   
                         </div>

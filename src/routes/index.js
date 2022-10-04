@@ -22,7 +22,8 @@ export default function Rotas(){
                     <Route path="/login" element={<Login />} />
                     <Route path="/usuariorecuperarsenha" element={<UsuarioRecuperarSenha />} />
                     <Route path="/eventoscadastro" element={<EventosCadastro />} />
-                    <Route path="/eventodetalhes/:id" element={<EventoDetalhes />} />
+                    <Route path="/eventodetalhes/:id" element={<EventoDetalhes />} /> 
+                    <Route path="/editarevento/:id" element={<EventosCadastro />} /> 
                 </Routes>
             </BrowserRouter>
         </Provider>
