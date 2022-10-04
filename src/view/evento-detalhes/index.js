@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 //Meus inports
@@ -16,6 +16,14 @@ function EventoDetalhes(props){
     const {id} = useParams();
     const usuarioLogado = useSelector(state => state.usuarioEmail);
     const [carregando, setCarregando] = useState(1);
+    const [excluido, setExcluido] = useState(0);
+
+    function remover(){
+        firebase.firestore().collection('eventos').doc(id).delete()
+            .then(() => {
+                setExcluido(1);
+            })
+    }
 
     useEffect(() => {
         if(carregando){
@@ -43,6 +51,11 @@ function EventoDetalhes(props){
     return(
         <>
             <Navbar />
+
+            {
+                excluido ? <Navigate to='/' /> : null
+            }
+
             <div className='container-fluid'>
                 {
                     carregando ? 
@@ -88,6 +101,12 @@ function EventoDetalhes(props){
                                     <Link to={`/editarevento/${id}`} className='btn-editar' ><i className='fas fa-pen-square fa-3x'></i></Link>
                                 :   '' 
                             }   
+
+                            {   
+                                usuarioLogado === evento.usuario ?
+                                    <button onClick={remover} type='button' className='btn btn-lg btn-block mt-3 mb-5 btn-remover'>Remover Evento</button>
+                                : ''
+                            }
                         </div>
                 }
             </div>

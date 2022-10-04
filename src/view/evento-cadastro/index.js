@@ -29,16 +29,18 @@ function EventosCadastro(props){
     const {id} = useParams();
 
     useEffect(() => {
-        firebase.firestore().collection('eventos').doc(id).get()
-                .then(resultado => {
-                    setTitulo(resultado.data().titulo)
-                    setTipo(resultado.data().tipo)
-                    setDetalhes(resultado.data().detalhes)
-                    setData(resultado.data().data)
-                    setHora(resultado.data().hora)
-                    setFotoAtual(resultado.data().foto)
-                    
-        });
+        if(id){
+            firebase.firestore().collection('eventos').doc(id).get()
+                    .then(resultado => {
+                        setTitulo(resultado.data().titulo)
+                        setTipo(resultado.data().tipo)
+                        setDetalhes(resultado.data().detalhes)
+                        setData(resultado.data().data)
+                        setHora(resultado.data().hora)
+                        setFotoAtual(resultado.data().foto)
+                        
+            });
+        }
 
     }, [carregando])
 

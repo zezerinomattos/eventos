@@ -27,3 +27,15 @@ a.btn-editar i{
 a.btn-editar i:hover{
     color: #91B2F2;
 }
+
+button.btn-remover{
+    background-color: #91B2F2;
+    color: #FFFF;
+    transition: 1s ease-out;
+}
+
+button.btn-remover:hover{
+    background-color: #0E1F40;
+    color: #FFFF;
+
+}
