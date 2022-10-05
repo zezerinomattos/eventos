@@ -1,6 +1,17 @@
 import { legacy_createStore } from 'redux';
 import usuarioReducer from './usuarioReducer';
+import { persistReducer, persistStore } from 'redux-persist';
 
-const store = legacy_createStore(usuarioReducer);
+import storage from 'redux-persist/lib/storage';
 
-export default store;
+const persistConfig = {
+    key: "siteeventos",
+    storage,
+}
+
+const persistedReducer = persistReducer(persistConfig, usuarioReducer);
+
+const store = legacy_createStore(persistedReducer);
+const persistor = persistStore(store);
+
+export  { store, persistor };
