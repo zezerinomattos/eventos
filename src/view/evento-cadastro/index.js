@@ -8,6 +8,7 @@ import 'firebase/auth';
 import './style.css';
 import firebase from '../../config/firebase';
 import Navbar from '../../components/navbar';
+import Footer from '../../components/footer';
 
 
 function EventosCadastro(props){
@@ -167,6 +168,11 @@ function EventosCadastro(props){
                     {msgTipo === 'erro' && <span><strong>Ops!</strong> Não foi possivel publicar o Evento! &#128532;</span>}
                     
             </div>
+
+
+            <footer className='fixed-bottom'>
+                <Footer />
+            </footer>
 
         </>
     );

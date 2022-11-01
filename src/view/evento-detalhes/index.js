@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import './style.css';
 import firebase from '../../config/firebase';
 import Navbar from '../../components/navbar';
+import Footer from '../../components/footer';
 
 
 
@@ -110,6 +111,8 @@ function EventoDetalhes(props){
                         </div>
                 }
             </div>
+
+            <Footer />
         </>
     );
 }

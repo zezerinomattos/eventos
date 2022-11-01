@@ -8,6 +8,7 @@ import { useSelector} from 'react-redux';
 import firebase from '../../config/firebase';
 import Navbar from '../../components/navbar';
 import EventoCard from '../../components/evento-card';
+import Footer from '../../components/footer';
 
 
 function Home(){
@@ -66,6 +67,8 @@ function Home(){
                                 
                 </div>
             </main>
+
+            <Footer />
 
         </>
         
