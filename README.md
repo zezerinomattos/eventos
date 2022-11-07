@@ -13,5 +13,5 @@ Esta aplicação foi desenvolvida com finalidade de estudos e possui as seguinte
 [📷] Upload de imagem <br/>
 [📲] Layout responsivo (se ajusta ao tamanho da tela) <br/>
 
-###Deploy no Netlify
-##[Clique aqui e veja o site trabalhando](https://lyon-eventos.netlify.app/)
+### Deploy no Netlify <br/>
+## [Clique aqui e veja o site trabalhando](https://lyon-eventos.netlify.app/)
