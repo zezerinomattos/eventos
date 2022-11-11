@@ -2,7 +2,7 @@ import firebase from 'firebase';
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCCSb1URK2VQbo91M4483jXVbyg7M4rhnc",
+    apiKey: "Minha apiKey",
     authDomain: "eventos-5fca6.firebaseapp.com",
     projectId: "eventos-5fca6",
     storageBucket: "eventos-5fca6.appspot.com",
